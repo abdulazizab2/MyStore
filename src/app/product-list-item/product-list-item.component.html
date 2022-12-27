@@ -1,0 +1,7 @@
+<p>{{ product.name }}</p>
+<br>
+<img class="images" src="{{ product.url }}" width="50" height="75">
+<br>
+<p>{{ product.price }}$</p>
+<br>
+<a [routerLink]="['/products', product.id]">View product details</a>
