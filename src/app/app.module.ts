@@ -11,6 +11,7 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RemoveProductComponent } from './remove-product/remove-product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ProductListItemComponent,
     ShoppingCartComponent,
     AddProductComponent,
-    NavBarComponent
+    NavBarComponent,
+    RemoveProductComponent
   ],
   imports: [
     BrowserModule,

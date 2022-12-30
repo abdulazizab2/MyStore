@@ -8,5 +8,7 @@
     <p>Price: {{ cartItem.price * cartItem.quantity }}$</p>
     <img class="images" src="{{ cartItem.url }}" width="120" height="180">
     <br>
+    <app-remove-product></app-remove-product>
+    <!-- <button (click)="removeProduct(cartItem)">Remove item from cart</button> -->
     <p>--------------------------</p>
 </ul>
