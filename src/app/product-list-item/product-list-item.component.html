@@ -4,4 +4,5 @@
 <br>
 <p>{{ product.price }}$</p>
 <br>
+<app-add-product [product]="product"></app-add-product>
 <a [routerLink]="['/products', product.id]">View product details</a>
