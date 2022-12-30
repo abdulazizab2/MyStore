@@ -1,7 +1,12 @@
 <h1>{{ title }}</h1>
 
 <ul *ngFor="let cartItem of cartItems">
-    <li>{{ cartItem.name }}</li>
-    <li>{{ cartItem.price }}</li>
-    <li>{{ cartItem.quantity }}</li>
+    <p>Product: {{ cartItem.name }}</p>
+    <p>Quantity:
+        <br>
+        <input type="number" name="quantity" required min="1" max="9" [(ngModel)]="cartItem.quantity"></p>
+    <p>Price: {{ cartItem.price * cartItem.quantity }}$</p>
+    <img class="images" src="{{ cartItem.url }}" width="120" height="180">
+    <br>
+    <p>--------------------------</p>
 </ul>

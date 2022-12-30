@@ -23,6 +23,7 @@ export class AddProductComponent implements OnInit {
     this.product = {
       name: '',
       price: 0,
+      url: ''
     };
   }
   ngOnInit(): void {}
@@ -31,6 +32,7 @@ export class AddProductComponent implements OnInit {
       name: this.product.name,
       price: this.product.price,
       quantity: this.quantity,
+      url: this.product.url
     };
     this.cartService.addProductItem(productItem);
 
