@@ -18,11 +18,13 @@ export class CartService {
   getProductItems(): Observable<ProductItem[]> {
     return of(this.productItemList);
   }
-  clearProductItem(cartItem: ProductItem): void {
+  clearProductItem(cartItem: ProductItem): ProductItem[] {
     for (let i = 0; i < this.productItemList.length; i++) {
-      if ((this.productItemList[i].name = cartItem.name)) {
-        this.productItemList.splice(i, 1);
+      if (this.productItemList[i].name === cartItem.name) {
+        this.productItemList = this.productItemList.splice(i, 1);
       }
+      break;
     }
+    return this.productItemList;
   }
 }

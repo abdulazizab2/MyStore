@@ -2,9 +2,6 @@ import {
   Component,
   OnInit,
   Input,
-  Output,
-  EventEmitter,
-  INJECTOR,
 } from '@angular/core';
 import { ProductItem } from '../models/ProductItem';
 import { CartService } from '../services/cart.service';

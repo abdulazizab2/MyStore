@@ -15,7 +15,11 @@ export class ShoppingCartComponent implements OnInit {
   constructor(private cartService: CartService) {}
   ngOnInit(): void {
     this.cartService.getProductItems().subscribe((res) => {
-      this.cartItems = res
+      this.cartItems = res;
     });
   }
+  updateCart(newCartItems: ProductItem[]): void {
+    this.cartItems = newCartItems
+  }
+
 }
