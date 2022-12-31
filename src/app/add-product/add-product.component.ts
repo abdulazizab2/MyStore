@@ -18,6 +18,7 @@ export class AddProductComponent implements OnInit {
   // @Output() addProduct: EventEmitter<ProductItem> = new EventEmitter();
   constructor(private cartService: CartService) {
     this.product = {
+      id:0,
       name: '',
       price: 0,
       url: ''
@@ -26,6 +27,7 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {}
   submitForm(): void {
     const productItem: ProductItem = {
+      id: this.product.id,
       name: this.product.name,
       price: this.product.price,
       quantity: this.quantity,

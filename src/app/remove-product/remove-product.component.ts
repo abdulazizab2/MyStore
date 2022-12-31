@@ -11,6 +11,7 @@ export class RemoveProductComponent implements OnInit {
   @Output() onItemRemoved: EventEmitter<ProductItem[]> = new EventEmitter();
   constructor(private cartService: CartService) {
     this.cartItem = {
+      id: 0,
       name: '',
       price: 0,
       quantity: 0,

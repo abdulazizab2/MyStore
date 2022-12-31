@@ -19,12 +19,9 @@ export class CartService {
     return of(this.productItemList);
   }
   clearProductItem(cartItem: ProductItem): ProductItem[] {
-    for (let i = 0; i < this.productItemList.length; i++) {
-      if (this.productItemList[i].name === cartItem.name) {
-        this.productItemList = this.productItemList.splice(i, 1);
-      }
-      break;
-    }
+    this.productItemList = this.productItemList.filter(
+      (item) => item.id !== cartItem.id
+    );
     return this.productItemList;
   }
 }

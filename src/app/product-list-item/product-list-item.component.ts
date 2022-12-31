@@ -10,6 +10,7 @@ export class ProductListItemComponent implements OnInit {
   @Input() product: Product;
   constructor() {
     this.product = {
+      id:0,
       name: '',
       price: 0,
     };
