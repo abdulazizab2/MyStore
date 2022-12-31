@@ -24,4 +24,11 @@ export class CartService {
     );
     return this.productItemList;
   }
+  getCartTotal(): number {
+    var sum = 0;
+    for (let i = 0; i < this.productItemList.length; i++) {
+      sum += this.productItemList[i].price * this.productItemList[i].quantity;
+    }
+    return sum;
+  }
 }

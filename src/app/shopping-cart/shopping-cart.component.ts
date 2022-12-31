@@ -12,14 +12,18 @@ import { Observable } from 'rxjs';
 export class ShoppingCartComponent implements OnInit {
   title = 'Your Shopping Cart';
   cartItems: ProductItem[] = [];
-  constructor(private cartService: CartService) {}
+  cartTotal: number = 0;
+  constructor(private cartService: CartService) {
+  }
   ngOnInit(): void {
     this.cartService.getProductItems().subscribe((res) => {
       this.cartItems = res;
     });
   }
   updateCart(newCartItems: ProductItem[]): void {
-    this.cartItems = newCartItems
+    this.cartItems = newCartItems;
   }
-
+  // getCartTotal() {
+  //   this.cartTotal = this.cartService.getCartTotal();
+  // }
 }
