@@ -12,6 +12,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RemoveProductComponent } from './remove-product/remove-product.component';
+import { ConfirmationPageComponent } from './confirmation-page/confirmation-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RemoveProductComponent } from './remove-product/remove-product.componen
     ShoppingCartComponent,
     AddProductComponent,
     NavBarComponent,
-    RemoveProductComponent
+    RemoveProductComponent,
+    ConfirmationPageComponent
   ],
   imports: [
     BrowserModule,

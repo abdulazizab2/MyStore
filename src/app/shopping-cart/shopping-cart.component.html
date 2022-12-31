@@ -1,3 +1,5 @@
+<div style="display:block; width:100%;">
+<div style="width:50%; float: left; display: inline-block;">
 <h1>{{ title }}</h1>
 <ul *ngFor="let cartItem of cartItems">
     <p>Product: {{ cartItem.name }}</p>
@@ -11,3 +13,13 @@
     <app-remove-product [cartItem]="cartItem" (onItemRemoved)="updateCart($event)"></app-remove-product>
     <p>--------------------------</p>
 </ul>
+</div>
+
+<div style="width:50%; float: left; display: inline-block;">
+</div>
+    <form #form="ngForm" (ngSubmit)="onConfirm()">
+        <input type="text" name="Full Name" required minlength="10" maxlength="30" placeholder="Full Name">
+        <input type="text"  name="Email" required minlength="8" maxlength="50" placeholder="Email">
+        <input type="submit" [disabled]="form.invalid" value="Confirm Order">
+    </form>
+</div>
