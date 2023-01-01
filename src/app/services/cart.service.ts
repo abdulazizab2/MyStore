@@ -12,6 +12,13 @@ export class CartService {
   constructor() {}
 
   addProductItem(productItem: ProductItem): ProductItem[] {
+    const itemIndex = this.productItemList.findIndex(
+      (item) => item.id === productItem.id
+    );
+    if (itemIndex > -1) {
+      this.productItemList[itemIndex].quantity += productItem.quantity;
+      return this.productItemList;
+    }
     this.productItemList.push(productItem);
     return this.productItemList;
   }
