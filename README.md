@@ -1,6 +1,7 @@
 # MyStore
 
 A simple e-commerce website to buy your favorite products.
+It uses Angular as a frontend Framework.
 
 # Running the server
 
