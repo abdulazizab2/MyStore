@@ -7,11 +7,7 @@ import { User } from '../models/User';
   styleUrls: ['./confirmation-page.component.css'],
 })
 export class ConfirmationPageComponent implements OnInit {
-  title = "Order Confirmation"
-  @Input() user: User = {
-    fullname: '',
-    email: ''
-  } 
+  title = 'Order Confirmation';
   constructor() {}
   ngOnInit(): void {}
 }

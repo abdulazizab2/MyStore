@@ -1,6 +1,7 @@
 <div style="display:block; width:100%;">
 <div style="width:50%; float: left; display: inline-block;">
 <h1>{{ title }}</h1>
+
 <ul *ngFor="let cartItem of cartItems">
     <p>Product: {{ cartItem.name }}</p>
     <p>Quantity:
@@ -15,11 +16,13 @@
 </ul>
 </div>
 
-<div style="width:50%; float: left; display: inline-block;">
+<div style="height:50%; float: left; display: inline-block;">
 </div>
-    <form #form="ngForm" (ngSubmit)="onConfirm()">
-        <input type="text" name="Full Name" required minlength="10" maxlength="30" placeholder="Full Name">
-        <input type="text"  name="Email" required minlength="8" maxlength="50" placeholder="Email">
+<form #form="ngForm" (ngSubmit)="onConfirm()">
+        <input type="text" name="Full Name" required minlength="10" maxlength="30" [(ngModel)]="fullname" placeholder="Full Name">
+        <input type="text"  name="Email" required minlength="8" maxlength="50" [(ngModel)]="email" placeholder="Email">
+        <input type="text" name="Credit Card" required min="16" max="16" [(ngModel)]="creditCard" placeholder="Credit Card Number (16 digits)">
+        <input type="text" name="Address" required [(ngModel)]="address" placeholder="Address">
         <input type="submit" [disabled]="form.invalid" value="Confirm Order">
     </form>
 </div>
