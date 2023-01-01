@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { Product } from '../models/Product';
 import { ProductItem } from '../models/ProductItem';
@@ -26,16 +26,18 @@ export class ShoppingCartComponent implements OnInit {
       fullname: this.fullname,
       email: this.email,
       creditCard: this.creditCard,
-      address: this.address
-    }
+      address: this.address,
+    };
   }
   ngOnInit(): void {
     this.cartService.getProductItems().subscribe((res) => {
       this.cartItems = res;
     });
+    this.getCartTotal();
   }
   updateCart(newCartItems: ProductItem[]): void {
     this.cartItems = newCartItems;
+    this.getCartTotal();
   }
   getCartTotal(): void {
     this.cartService.getCartTotal().subscribe((res) => {
@@ -44,9 +46,16 @@ export class ShoppingCartComponent implements OnInit {
   }
   onConfirm(): void {
     if (this.cartItems.length < 1) {
-      alert("Cart is empty")
-      return
+      alert('Cart is empty');
+      return;
     }
     this.router.navigate(['/confirmation-page']);
+  }
+  @HostListener('document:click', ['$event'])
+  documentClick(event: MouseEvent) {
+    if (this.router.url == '/shopping-cart') {
+      this.getCartTotal();
+    }
+    return;
   }
 }
