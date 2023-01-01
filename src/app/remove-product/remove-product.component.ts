@@ -21,5 +21,6 @@ export class RemoveProductComponent implements OnInit {
   removeItem(): void {
     const newCartItems = this.cartService.clearProductItem(this.cartItem)
     this.onItemRemoved.emit(newCartItems)
+    alert('Item removed from cart')
   } 
 }
