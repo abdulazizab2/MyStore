@@ -43,6 +43,10 @@ export class ShoppingCartComponent implements OnInit {
     });
   }
   onConfirm(): void {
+    if (this.cartItems.length < 1) {
+      alert("Cart is empty")
+      return
+    }
     this.router.navigate(['/confirmation-page']);
   }
 }
